@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Weight Quiz</string>
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -30,7 +30,10 @@
       <item>
        <widget class="QLabel" name="label_guess">
         <property name="text">
-         <string>Guess: </string>
+         <string>&amp;Guess: </string>
+        </property>
+        <property name="buddy">
+         <cstring>lineEdit_guess</cstring>
         </property>
        </widget>
       </item>
@@ -57,6 +60,15 @@
      <height>27</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuGame">
+    <property name="title">
+     <string>Game</string>
+    </property>
+    <addaction name="actionNew_game"/>
+    <addaction name="separator"/>
+    <addaction name="actionQuit"/>
+   </widget>
+   <addaction name="menuGame"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -65,10 +77,45 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionNew_game"/>
+   <addaction name="separator"/>
+   <addaction name="actionQuit"/>
   </widget>
+  <action name="actionQuit">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/application-exit.svg</normaloff>:/application-exit.svg</iconset>
+   </property>
+   <property name="text">
+    <string>Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Exit the programm</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionNew_game">
+   <property name="icon">
+    <iconset resource="resource.qrc">
+     <normaloff>:/game-new.svg</normaloff>:/game-new.svg</iconset>
+   </property>
+   <property name="text">
+    <string>New game</string>
+   </property>
+   <property name="toolTip">
+    <string>Start a new game</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>lineEdit_guess</sender>
@@ -83,6 +130,22 @@
     <hint type="destinationlabel">
      <x>296</x>
      <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit_guess</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushButton_ok</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>339</x>
+     <y>345</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>344</y>
     </hint>
    </hints>
   </connection>
