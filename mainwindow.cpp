@@ -17,7 +17,8 @@ void MainWindow::handleOKButton()
 {
     int weight = getWeight(ui->lineEdit_guess->text().trimmed());
     if (weight != -1) {
-
+        qDebug() << weight << "mg";
+        qDebug() << "not implemented!";
     } else {
         //set lineEdit background lightred
         ui->lineEdit_guess->setStyleSheet("background-color: #F5A9A9");

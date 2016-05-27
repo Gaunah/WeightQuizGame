@@ -17,6 +17,12 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QLabel" name="label_imgName">
+      <property name="font">
+       <font>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
       <property name="text">
        <string>&lt;name&gt;</string>
       </property>
@@ -30,7 +36,7 @@
       <item>
        <widget class="QLabel" name="label_guess">
         <property name="text">
-         <string>&amp;Guess: </string>
+         <string>G&amp;uess: </string>
         </property>
         <property name="buddy">
          <cstring>lineEdit_guess</cstring>
@@ -62,7 +68,7 @@
    </property>
    <widget class="QMenu" name="menuGame">
     <property name="title">
-     <string>Game</string>
+     <string>&amp;Game</string>
     </property>
     <addaction name="actionNew_game"/>
     <addaction name="separator"/>
