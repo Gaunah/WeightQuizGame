@@ -26,7 +26,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    int getWeight(const QString &input) const;
+    double getWeight(const QString &input) const;
 };
 
 #endif // MAINWINDOW_H
